@@ -1,51 +1,110 @@
 <div align="center">
 
-QualeanPro
+# QualeanPro
 
-Cloud-Native E-Learning Platform
+### Cloud-Native E-Learning Platform
 
-Public Engineering Case Study
+**Public Engineering Case Study**
 
-The production source code is private and is not included in this repository.
+> The production source code is private and is not included in this repository.
 
 <br>
 
+![Java](https://img.shields.io/badge/Java-17%2F21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-19-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Production-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
-
-
-
-
-
-
-
-
-
-
-
-
+![Kafka](https://img.shields.io/badge/Kafka-Event_Driven-231F20?style=flat-square&logo=apachekafka&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Data-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Keycloak](https://img.shields.io/badge/Keycloak-IAM-4D4D4D?style=flat-square)
+![Prometheus](https://img.shields.io/badge/Prometheus-Metrics-E6522C?style=flat-square&logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-Observability-F46800?style=flat-square&logo=grafana&logoColor=white)
 
 </div>
 
-Overview
+---
 
-QualeanPro is a production-oriented e-learning platform designed to support training management, consultations, certification workflows, user management and online learning experiences through a modern microservices architecture.
+## Overview
 
-This repository presents the engineering decisions, architecture, infrastructure and technical challenges behind the platform without exposing private source code or sensitive production information.
+QualeanPro is a **production-oriented e-learning platform** built around a modern **microservices architecture**.
+
+It supports:
+
+- training and course management;
+- consultations;
+- certificate workflows;
+- user and profile management;
+- online learning experiences;
+- secure authentication and authorization;
+- asynchronous communication;
+- object storage;
+- CI/CD;
+- monitoring and production operations.
+
+This repository is a **public engineering case study** focused on the architecture, technical decisions, infrastructure and production challenges behind the platform.
+
+No private source code, credentials or sensitive production information is exposed.
+
+<br>
 
 <table>
 <tr>
-<td width="25%"><strong>Architecture</strong><br>Microservices</td>
-<td width="25%"><strong>Backend</strong><br>Java / Spring Boot</td>
-<td width="25%"><strong>Frontend</strong><br>Angular</td>
-<td width="25%"><strong>Runtime</strong><br>Docker / Ubuntu</td>
+<td align="center" width="25%">
+
+### 🏗️ Architecture
+**Microservices**
+
+</td>
+<td align="center" width="25%">
+
+### ☕ Backend
+**Java / Spring Boot**
+
+</td>
+<td align="center" width="25%">
+
+### 🌐 Frontend
+**Angular**
+
+</td>
+<td align="center" width="25%">
+
+### 🐳 Runtime
+**Docker / Ubuntu**
+
+</td>
 </tr>
+
 <tr>
-<td><strong>Messaging</strong><br>Kafka</td>
-<td><strong>Data</strong><br>PostgreSQL / Redis</td>
-<td><strong>Security</strong><br>Keycloak / OIDC / PKCE</td>
-<td><strong>Observability</strong><br>Prometheus / Grafana</td>
+<td align="center">
+
+### ⚡ Messaging
+**Kafka**
+
+</td>
+<td align="center">
+
+### 🗄️ Data
+**PostgreSQL / Redis**
+
+</td>
+<td align="center">
+
+### 🔐 Security
+**Keycloak / OIDC / PKCE**
+
+</td>
+<td align="center">
+
+### 📊 Observability
+**Prometheus / Grafana**
+
+</td>
 </tr>
 </table>
+
+---
 
 ## 📚 Table of Contents
 
