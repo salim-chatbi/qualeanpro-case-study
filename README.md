@@ -155,34 +155,105 @@ No private source code, credentials or sensitive production information is expos
 
 ---
 
-QualeanPro was designed to provide a scalable digital learning environment capable of supporting:
+## 🎯 Project Overview
+
+QualeanPro was designed to provide a **scalable digital learning environment** capable of supporting the main functional and operational needs of a modern e-learning platform.
 
 <table>
 <tr>
-<td>👤 User & profile management</td>
-<td>🎓 Training & course management</td>
-<td>💬 Consultation services</td>
+<td align="center" width="33%">
+
+### 👤 User Management
+Profiles, identity-related data and user operations
+
+</td>
+<td align="center" width="33%">
+
+### 🎓 Training Management
+Courses, training programs and learning content
+
+</td>
+<td align="center" width="33%">
+
+### 💬 Consultation Services
+Structured consultation workflows and service offerings
+
+</td>
 </tr>
+
 <tr>
-<td>📜 Certificate generation</td>
-<td>🎥 Zoom session integration</td>
-<td>🔐 Authentication & authorization</td>
+<td align="center">
+
+### 📜 Certification
+Certificate generation and validation workflows
+
+</td>
+<td align="center">
+
+### 🎥 Online Sessions
+Zoom session creation, synchronization and management
+
+</td>
+<td align="center">
+
+### 🔐 Security
+Authentication, authorization and access control
+
+</td>
 </tr>
+
 <tr>
-<td>⚡ Asynchronous communication</td>
-<td>🗂️ Object storage</td>
-<td>📊 Monitoring & observability</td>
+<td align="center">
+
+### ⚡ Event-Driven Processing
+Asynchronous communication using Kafka
+
+</td>
+<td align="center">
+
+### 🗂️ Object Storage
+Centralized file and document storage with MinIO
+
+</td>
+<td align="center">
+
+### 📊 Observability
+Metrics, health checks and production monitoring
+
+</td>
 </tr>
+
 <tr>
-<td>🔄 CI/CD automation</td>
-<td>🚀 Production deployment</td>
-<td>🛡️ Production reliability</td>
+<td align="center">
+
+### 🔄 CI/CD
+Automated build, validation and deployment workflows
+
+</td>
+<td align="center">
+
+### 🚀 Production Deployment
+Containerized deployment on Ubuntu
+
+</td>
+<td align="center">
+
+### 🛡️ Reliability
+Operational monitoring, backups and maintainability
+
+</td>
 </tr>
 </table>
 
-Engineering Priorities
+### ⚙️ Engineering Priorities
 
-Scalability · Maintainability · Security · Observability · Cloud-Native Practices · Production Reliability
+<div align="center">
+
+`Scalability` · `Maintainability` · `Security` · `Observability` · `Cloud-Native Practices` · `Production Reliability`
+
+</div>
+
+---
 
 My Role
 
