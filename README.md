@@ -328,43 +328,84 @@ I contributed to the **design, development and production deployment** of Qualea
 
 ---
 
-High-Level Architecture
+## 🏗️ High-Level Architecture
 
-                              Internet
-                                 │
-                                 ▼
-                              Nginx
-                                 │
-                    ┌────────────┴────────────┐
-                    │                         │
-                    ▼                         ▼
-             Angular Frontend            API Gateway
-                                              │
-                                              ▼
-                                   Service Discovery
-                                              │
-               ┌──────────────────────────────┼──────────────────────────────┐
-               │                              │                              │
-               ▼                              ▼                              ▼
-         User Service                 Formation Service           Consultation Service
-               │                              │                              │
-               │                              ▼                              │
-               │                      Certificate Service                   │
-               │                              │                              │
-               └────────────────────── Services Service ────────────────────┘
-                                              │
-                         ┌────────────────────┼────────────────────┐
-                         │                    │                    │
-                         ▼                    ▼                    ▼
-                    PostgreSQL             Redis                 Kafka
-                                              │
-                                              ▼
-                                             MinIO
+The platform follows a **microservices-oriented architecture** with a single public entry point, centralized identity management and dedicated infrastructure services.
 
-                                 Keycloak
-                                    │
-                                    └── Authentication / Authorization
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                                CLIENT LAYER                                  │
+│                                                                              │
+│                         Web Browser / End User                               │
+└──────────────────────────────────────┬───────────────────────────────────────┘
+                                       │
+                                       │ HTTPS
+                                       ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                              EDGE / ENTRY LAYER                              │
+│                                                                              │
+│                                  Nginx                                       │
+│                         Reverse Proxy + TLS                                  │
+└───────────────────────┬───────────────────────────────┬──────────────────────┘
+                        │                               │
+                        ▼                               ▼
+              ┌──────────────────┐            ┌──────────────────┐
+              │ Angular Frontend │            │   API Gateway    │
+              │       SPA        │            │ Central API Edge │
+              └─────────┬────────┘            └─────────┬────────┘
+                        │                               │
+                        │ OIDC / PKCE                   │ JWT / Routing
+                        ▼                               │
+              ┌──────────────────┐                     │
+              │     Keycloak     │                     │
+              │ Identity & Access│                     │
+              │    Management    │                     │
+              └──────────────────┘                     │
+                                                      ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                         PLATFORM SERVICES LAYER                              │
+│                                                                              │
+│        ┌──────────────────────┐       ┌──────────────────────┐               │
+│        │   Service Registry   │       │    Config Server     │               │
+│        │ Service Discovery    │       │ Centralized Config   │               │
+│        └──────────┬───────────┘       └──────────┬───────────┘               │
+│                   │                              │                           │
+│                   └──────────────┬───────────────┘                           │
+└──────────────────────────────────┼───────────────────────────────────────────┘
+                                   │
+                                   ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                         BUSINESS SERVICES LAYER                              │
+│                                                                              │
+│   ┌───────────────┐   ┌──────────────────┐   ┌──────────────────────┐       │
+│   │ User Service  │   │ Formation Service│   │ Consultation Service │       │
+│   └───────┬───────┘   └────────┬─────────┘   └──────────┬───────────┘       │
+│           │                    │                        │                    │
+│           │             ┌──────▼──────────┐             │                    │
+│           │             │Certificate Svc  │             │                    │
+│           │             └──────┬──────────┘             │                    │
+│           │                    │                        │                    │
+│           └────────────────────┼────────────────────────┘                    │
+│                                │                                             │
+│                       ┌────────▼────────┐                                    │
+│                       │ Services Service│                                    │
+│                       └─────────────────┘                                    │
+└──────────────────────────────────┬───────────────────────────────────────────┘
+                                   │
+              ┌────────────────────┼──────────────────────┐
+              │                    │                      │
+              ▼                    ▼                      ▼
+┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐
+│    PostgreSQL    │    │      Redis       │    │      Kafka       │
+│ Relational Data  │    │ Cache / Ephemeral│    │ Event Streaming  │
+└──────────────────┘    └──────────────────┘    └──────────────────┘
 
+              ┌──────────────────────────────────────────┐
+              │                  MinIO                   │
+              │        Object & Document Storage         │
+              └──────────────────────────────────────────┘
+              > [!NOTE]
+> **Architecture Principle:** QualeanPro separates the system into clear architectural layers — edge, identity, platform services, business services, persistence, messaging and object storage — to improve **maintainability, scalability, security, observability and independent service evolution**.
+                                     
 Design goal: separate business and technical responsibilities while keeping services independently deployable, observable and easier to evolve.
 
 System Components
