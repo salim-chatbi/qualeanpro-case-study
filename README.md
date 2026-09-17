@@ -47,57 +47,54 @@ This repository presents the engineering decisions, architecture, infrastructure
 </tr>
 </table>
 
-Table of Contents
+## 📚 Table of Contents
 
-Project Overview
+<table>
+<tr>
+<td valign="top" width="50%">
 
-My Role
+### 🧭 Overview
+- [Project Overview](#project-overview)
+- [My Role](#my-role)
+- [High-Level Architecture](#high-level-architecture)
+- [System Components](#system-components)
+- [Core Business Capabilities](#core-business-capabilities)
 
-High-Level Architecture
+### 🔐 Architecture & Security
+- [Identity & Access Management](#identity--access-management)
+- [Network & Exposure Model](#network--exposure-model)
+- [Data & Storage Strategy](#data--storage-strategy)
+- [Event-Driven Communication](#event-driven-communication)
+- [Service Discovery & Configuration](#service-discovery--configuration)
+- [Containerized Architecture](#containerized-architecture)
 
-System Components
+</td>
+<td valign="top" width="50%">
 
-Core Business Capabilities
+### 🚀 Production & Operations
+- [Production Engineering](#production-engineering)
+- [CI/CD Pipeline](#cicd-pipeline)
+- [Observability & Health](#observability--health)
+- [Backup & Recovery](#backup--recovery)
+- [Real Engineering Challenges](#real-engineering-challenges)
 
-Identity & Access Management
+### 🧠 Engineering & Evolution
+- [Key Engineering Decisions](#key-engineering-decisions)
+- [Engineering Principles](#engineering-principles)
+- [Current Technical Evolution](#current-technical-evolution)
+- [AI & RAG Exploration](#ai--rag-exploration)
+- [Architecture Evolution](#architecture-evolution)
+- [What This Project Demonstrates](#what-this-project-demonstrates)
 
-Network & Exposure Model
+### 📌 Project Details
+- [Confidentiality](#confidentiality)
+- [Project Information](#project-information)
 
-Data & Storage Strategy
+</td>
+</tr>
+</table>
 
-Event-Driven Communication
-
-Service Discovery & Configuration
-
-Containerized Architecture
-
-Production Engineering
-
-CI/CD Pipeline
-
-Observability & Health
-
-Backup & Recovery
-
-Real Engineering Challenges
-
-Key Engineering Decisions
-
-Engineering Principles
-
-Current Technical Evolution
-
-AI & RAG Exploration
-
-Architecture Evolution
-
-What This Project Demonstrates
-
-Confidentiality
-
-Project Information
-
-Project Overview
+---
 
 QualeanPro was designed to provide a scalable digital learning environment capable of supporting:
 
