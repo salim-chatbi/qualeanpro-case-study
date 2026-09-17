@@ -1,119 +1,213 @@
-QualeanPro — Cloud-Native E-Learning Platform
+<div align="center">
+
+QualeanPro
+
+Cloud-Native E-Learning Platform
 
 Public Engineering Case Study
+
 The production source code is private and is not included in this repository.
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+Overview
 
 QualeanPro is a production-oriented e-learning platform designed to support training management, consultations, certification workflows, user management and online learning experiences through a modern microservices architecture.
 
 This repository presents the engineering decisions, architecture, infrastructure and technical challenges behind the platform without exposing private source code or sensitive production information.
 
-🎯 Project Overview
+<table>
+<tr>
+<td width="25%"><strong>Architecture</strong><br>Microservices</td>
+<td width="25%"><strong>Backend</strong><br>Java / Spring Boot</td>
+<td width="25%"><strong>Frontend</strong><br>Angular</td>
+<td width="25%"><strong>Runtime</strong><br>Docker / Ubuntu</td>
+</tr>
+<tr>
+<td><strong>Messaging</strong><br>Kafka</td>
+<td><strong>Data</strong><br>PostgreSQL / Redis</td>
+<td><strong>Security</strong><br>Keycloak / OIDC / PKCE</td>
+<td><strong>Observability</strong><br>Prometheus / Grafana</td>
+</tr>
+</table>
+
+Table of Contents
+
+Project Overview
+
+My Role
+
+High-Level Architecture
+
+System Components
+
+Core Business Capabilities
+
+Identity & Access Management
+
+Network & Exposure Model
+
+Data & Storage Strategy
+
+Event-Driven Communication
+
+Service Discovery & Configuration
+
+Containerized Architecture
+
+Production Engineering
+
+CI/CD Pipeline
+
+Observability & Health
+
+Backup & Recovery
+
+Real Engineering Challenges
+
+Key Engineering Decisions
+
+Engineering Principles
+
+Current Technical Evolution
+
+AI & RAG Exploration
+
+Architecture Evolution
+
+What This Project Demonstrates
+
+Confidentiality
+
+Project Information
+
+Project Overview
 
 QualeanPro was designed to provide a scalable digital learning environment capable of supporting:
 
-user and profile management;
+<table>
+<tr>
+<td>👤 User & profile management</td>
+<td>🎓 Training & course management</td>
+<td>💬 Consultation services</td>
+</tr>
+<tr>
+<td>📜 Certificate generation</td>
+<td>🎥 Zoom session integration</td>
+<td>🔐 Authentication & authorization</td>
+</tr>
+<tr>
+<td>⚡ Asynchronous communication</td>
+<td>🗂️ Object storage</td>
+<td>📊 Monitoring & observability</td>
+</tr>
+<tr>
+<td>🔄 CI/CD automation</td>
+<td>🚀 Production deployment</td>
+<td>🛡️ Production reliability</td>
+</tr>
+</table>
 
-training and course management;
+Engineering Priorities
 
-consultation services;
+Scalability · Maintainability · Security · Observability · Cloud-Native Practices · Production Reliability
 
-certificate generation;
-
-Zoom session integration;
-
-authentication and authorization;
-
-asynchronous communication;
-
-object storage;
-
-monitoring and observability;
-
-CI/CD automation;
-
-production deployment.
-
-The platform is built with a strong focus on:
-
-scalability;
-
-maintainability;
-
-security;
-
-observability;
-
-cloud-native practices;
-
-production reliability.
-
-👨‍💻 My Role
+My Role
 
 I contributed to the design, development and production deployment of the platform across multiple technical areas.
 
+<table>
+<tr>
+<td valign="top" width="50%">
+
 Backend Engineering
 
-Java and Spring Boot microservices
+Java & Spring Boot microservices
 
 REST API design
 
-service-to-service communication
+Service-to-service communication
 
-configuration management
+Configuration management
 
-service discovery
+Service discovery
 
 API gateway integration
 
-persistence with PostgreSQL
+PostgreSQL persistence
 
-asynchronous processing with Kafka
+Kafka asynchronous processing
 
-caching with Redis
+Redis caching
+
+</td>
+<td valign="top" width="50%">
 
 Frontend
 
 Angular SPA integration
 
-authentication flow integration
+Authentication flow integration
 
 API communication through the gateway
 
-production frontend deployment
+Production frontend deployment
 
 Security
 
-Keycloak-based Identity and Access Management
+Keycloak-based IAM
 
-OAuth2
-
-OpenID Connect
+OAuth2 / OpenID Connect
 
 PKCE
 
-role-based access control
+Role-based access control
 
-secured application access
+Secured application access
+
+</td>
+</tr>
+<tr>
+<td valign="top">
 
 DevOps & Production
 
-Docker and Docker Compose
+Docker & Docker Compose
 
 GitHub Actions CI/CD
 
 Nginx reverse proxy
 
-HTTPS/TLS
+HTTPS / TLS
 
-production deployment on Ubuntu
+Ubuntu production deployment
 
-container resource management
+Container resource management
 
-persistent volume management
+Persistent volume management
 
-backup strategy
+Backup strategy
 
-monitoring and troubleshooting
+Monitoring & troubleshooting
+
+</td>
+<td valign="top">
 
 Observability
 
@@ -121,13 +215,17 @@ Prometheus
 
 Grafana
 
-centralized logs
+Centralized logs
 
-service health checks
+Service health checks
 
-production monitoring
+Production monitoring
 
-🏗️ High-Level Architecture
+</td>
+</tr>
+</table>
+
+High-Level Architecture
 
                               Internet
                                  │
@@ -164,9 +262,9 @@ production monitoring
                                     │
                                     └── Authentication / Authorization
 
-🧩 System Components
+Design goal: separate business and technical responsibilities while keeping services independently deployable, observable and easier to evolve.
 
-QualeanPro is composed of several independently deployable services, each responsible for a specific business capability.
+System Components
 
 Component
 
@@ -232,13 +330,10 @@ Nginx
 
 Reverse proxy and HTTPS entry point
 
-The architecture separates technical and business responsibilities while keeping each service independently deployable and observable.
+Core Business Capabilities
 
-🎯 Core Business Capabilities
-
-Training Management
-
-The training domain manages:
+<details open>
+<summary><strong>🎓 Training Management</strong></summary>
 
 courses and training programs;
 
@@ -252,9 +347,10 @@ training assignment;
 
 learning content.
 
-User Management
+</details>
 
-The user domain manages:
+<details>
+<summary><strong>👤 User Management</strong></summary>
 
 user profiles;
 
@@ -266,31 +362,36 @@ authorization;
 
 profile-related documents and resources.
 
-Consultation Services
+</details>
+
+<details>
+<summary><strong>💬 Consultation Services</strong></summary>
 
 The platform supports different consultation offerings and service levels.
 
 The consultation domain is isolated from training management to keep business responsibilities separated.
 
-Certificate Management
+</details>
 
-The certificate service is responsible for:
+<details>
+<summary><strong>📜 Certificate Management</strong></summary>
 
-generating certificates;
+certificate generation;
 
-assigning certificate identifiers;
+certificate identifiers;
 
-producing PDF certificates;
+PDF certificates;
 
 QR-based certificate verification;
 
 certificate lifecycle management.
 
-Online Sessions
+</details>
 
-The platform integrates remote learning sessions through Zoom.
+<details>
+<summary><strong>🎥 Online Sessions</strong></summary>
 
-Supported technical workflows include:
+The platform integrates remote learning sessions through Zoom:
 
 session creation;
 
@@ -302,11 +403,11 @@ session deletion;
 
 association with training activities.
 
-🔐 Identity & Access Management
+</details>
+
+Identity & Access Management
 
 Authentication and authorization are delegated to Keycloak instead of being implemented directly inside the application.
-
-This allows the platform to rely on standardized identity protocols.
 
 Authentication Flow
 
@@ -329,29 +430,41 @@ API Gateway
  ├──────────────► Certificate Service
  └──────────────► Services Service
 
-Key security principles include:
+Security Principles
 
-centralized authentication;
+Principle
 
-OAuth2;
+Implementation
 
-OpenID Connect;
+Centralized authentication
 
-PKCE for the Angular SPA;
+Keycloak
 
-JWT-based access tokens;
+Standard identity protocols
 
-role-based authorization;
+OAuth2 / OpenID Connect
 
-separation between public and internal services;
+SPA protection
 
-HTTPS termination through Nginx;
+PKCE
 
-no direct exposure of databases or internal middleware to the Internet.
+Access token model
 
-🌐 Network & Exposure Model
+JWT
 
-Only the required entry points are exposed publicly.
+Authorization
+
+Role-based access control
+
+Public exposure
+
+Nginx / HTTPS only where required
+
+Internal services
+
+Not directly exposed to the Internet
+
+Network & Exposure Model
 
                         Internet
                            │
@@ -376,75 +489,36 @@ Only the required entry points are exposed publicly.
                                          │
                                        MinIO
 
-Services such as PostgreSQL, Redis, Kafka and MinIO are not intended to be directly reachable from the public Internet.
+PostgreSQL, Redis, Kafka and MinIO are not intended to be directly reachable from the public Internet.
 
-📦 Data & Storage Strategy
+Data & Storage Strategy
 
-Different storage technologies are used according to the type of workload.
+<table>
+<tr>
+<td width="25%" valign="top"><strong>PostgreSQL</strong><br><br>Transactional and relational application data.</td>
+<td width="25%" valign="top"><strong>Redis</strong><br><br>Fast-access temporary data and caching where justified.</td>
+<td width="25%" valign="top"><strong>Kafka</strong><br><br>Asynchronous event communication.</td>
+<td width="25%" valign="top"><strong>MinIO</strong><br><br>Centralized object and file storage.</td>
+</tr>
+</table>
 
-PostgreSQL
+Object Storage Evolution
 
-Used for transactional and relational application data.
+Old approach                          Target approach
 
-Business entities
-Users
-Training data
-Consultations
-Certificates
-Application relationships
-        │
-        ▼
-    PostgreSQL
+Microservice                          Microservices
+    │                                     │
+    └── Local /uploads                    ▼
+                                        MinIO
+                                          │
+                                          ├── user objects
+                                          ├── training resources
+                                          ├── certificates
+                                          └── application files
 
-Redis
+This improves persistence, portability, backup management and separation between application runtime and file storage.
 
-Used for fast-access and temporary data where caching is justified.
-
-Application
-    │
-    ├── Database access
-    │
-    └── Redis cache
-
-This reduces unnecessary database access for suitable workloads.
-
-MinIO
-
-MinIO provides centralized object storage.
-
-Instead of keeping uploaded files inside application containers:
-
-Old approach
-
-Microservice
-    │
-    └── Local /uploads directory
-
-the target architecture is:
-
-Microservices
-     │
-     ▼
-    MinIO
-     │
-     ├── user objects
-     ├── training resources
-     ├── certificates
-     └── application files
-
-This improves:
-
-persistence;
-
-portability;
-
-backup management;
-
-separation between application runtime and file storage.
-
-⚡ Event-Driven Communication
-
-Kafka is used for workflows where asynchronous communication provides value.
+Event-Driven Communication
 
 Producer Service
        │
@@ -456,13 +530,9 @@ Producer Service
        │
        └──────────► Consumer B
 
-Using asynchronous events helps reduce direct coupling between services and prepares the platform for workflows that do not require synchronous request/response communication.
+Kafka is used where asynchronous communication provides architectural value and reduces tight coupling between services.
 
-Kafka is treated as infrastructure state and uses persistent storage independently from MinIO.
-
-🔄 Service Discovery & Configuration
-
-QualeanPro includes dedicated infrastructure services for configuration and discovery.
+Service Discovery & Configuration
 
                      Config Server
                           │
@@ -479,13 +549,7 @@ QualeanPro includes dedicated infrastructure services for configuration and disc
            │              │               │
        Service A      Service B       Service C
 
-This allows application services to avoid hard-coded service locations and centralizes environment-specific configuration.
-
-🐳 Containerized Architecture
-
-The production platform runs using Docker containers.
-
-Each major component is isolated into its own container:
+Containerized Architecture
 
 Docker Host
 │
@@ -505,27 +569,11 @@ Docker Host
 ├── kafka
 └── minio
 
-Containerization provides:
+Containerization provides: consistent environments · reproducible deployments · service isolation · simplified dependency management · easier rollback · resource limits per service.
 
-consistent runtime environments;
+Production Engineering
 
-reproducible deployments;
-
-service isolation;
-
-simplified dependency management;
-
-easier rollback and replacement;
-
-resource limits per service.
-
-🧠 Container Resource Management
-
-Production operation also requires controlling CPU and memory consumption.
-
-Java services are monitored independently because JVM-based workloads can consume memory beyond the Java heap.
-
-The production environment therefore considers:
+Container Resource Management
 
 Container Memory Limit
         │
@@ -547,19 +595,11 @@ tuning JVM memory settings;
 
 adjusting service memory allocation when justified.
 
-This is an example of the transition from application development to real production operations.
+Persistent Volume Strategy
 
-💾 Persistent Volume Strategy
+Stateful services include:
 
-Stateful services use Docker volumes.
-
-The persistence strategy covers components such as:
-
-PostgreSQL
-Keycloak
-Redis
-Kafka
-MinIO
+PostgreSQL · Keycloak · Redis · Kafka · MinIO
 
 Production maintenance includes:
 
@@ -583,13 +623,7 @@ qualeanpro-prod_redis_data
 qualeanpro-prod_kafka_data
 qualeanpro-prod_minio_data
 
-This improves maintainability and operational traceability.
-
-🚀 CI/CD Pipeline
-
-QualeanPro uses GitHub Actions to automate deployment workflows.
-
-A simplified pipeline looks like:
+CI/CD Pipeline
 
 Developer
     │
@@ -614,8 +648,6 @@ GitHub Actions
 
 Production images are versioned using immutable identifiers instead of relying only on latest.
 
-This makes deployments easier to trace:
-
 Git Commit
     │
     ▼
@@ -624,25 +656,9 @@ Docker Image Tag
     ▼
 Production Deployment
 
-A production version can therefore be associated with the source revision that generated it.
+Reverse Proxy & HTTPS
 
-🌐 Reverse Proxy & HTTPS
-
-Nginx is the public entry point of the platform.
-
-Responsibilities include:
-
-HTTPS termination;
-
-frontend delivery;
-
-API routing;
-
-security headers;
-
-reverse proxying;
-
-separation between public endpoints and internal services.
+Nginx acts as the public entry point.
 
 Client
   │
@@ -654,102 +670,82 @@ Nginx
   │
   └────────► API Gateway
 
-TLS certificates are managed separately from the application containers.
+Responsibilities include:
 
-📊 Observability
+HTTPS termination · frontend delivery · API routing · security headers · reverse proxying · public/internal separation
 
-Production systems need more than functional code.
+Observability & Health
 
-QualeanPro includes an observability layer for understanding runtime behavior.
+<table>
+<tr>
+<td width="33%" valign="top">
 
-Applications
-    │
-    ├── Metrics
-    ├── Logs
-    └── Health Information
-          │
-          ▼
-     Observability Stack
-          │
-          ├── Prometheus
-          ├── Grafana
-          └── Logging Pipeline
+Metrics
 
-The monitoring strategy covers areas such as:
+Prometheus
 
-container availability;
+CPU usage
 
-service health;
+Memory usage
 
-memory usage;
+Application metrics
 
-CPU usage;
+Disk utilization
 
-infrastructure status;
+</td>
+<td width="33%" valign="top">
 
-application metrics;
+Visualization
 
-disk utilization;
+Grafana
 
-service failures.
+Infrastructure status
 
-❤️ Health Checks
+Service health
 
-Docker health checks are used for critical components and application services.
+Runtime visibility
 
-Example operational states:
+</td>
+<td width="33%" valign="top">
 
-Service
-   │
-   ├── starting
-   │
-   ├── healthy
-   │
-   └── unhealthy
+Health
 
-Health checks help distinguish:
+Docker health checks
+
+Service availability
+
+Failure detection
+
+Production diagnostics
+
+</td>
+</tr>
+</table>
 
 Container running
         ≠
 Application ready
 
-This is particularly important for databases, identity services and Spring Boot applications.
+Backup & Recovery
 
-💾 Backup & Recovery Strategy
-
-Persistent application data requires an explicit recovery strategy.
-
-The main data domains requiring protection include:
+Protected data domains:
 
 PostgreSQL
-    │
     └── transactional data
 
 MinIO
-    │
     └── object storage
 
-The operational approach includes:
+Operational approach:
 
-scheduled backups;
-
-retention policies;
-
-backup verification;
-
-separation between live data and backups;
-
-recovery documentation;
-
-disaster-recovery planning.
+Scheduled Backups → Retention → Verification → Recovery Documentation → Disaster Recovery Planning
 
 A backup is considered useful only if restoration has been considered as part of the process.
 
-🧪 Production Operations
+Production Operations
 
-Operating QualeanPro in production involves tasks beyond application development.
-
-Examples include:
+<details>
+<summary><strong>View operational responsibilities</strong></summary>
 
 Ubuntu server maintenance;
 
@@ -773,7 +769,7 @@ service availability checks;
 
 deployment validation.
 
-A typical maintenance validation flow is:
+Maintenance Validation Flow
 
 Backup verification
         │
@@ -795,31 +791,25 @@ HTTPS verification
         ▼
 Application validation
 
-🧯 Real Engineering Challenges
+</details>
 
-Building and operating the platform required solving several real integration and production issues.
+Real Engineering Challenges
 
-CORS Configuration
+<details open>
+<summary><strong>🌐 CORS Configuration</strong></summary>
 
 Frontend and API communication required correctly aligning:
 
-Browser
-Angular
-Nginx
-Gateway
-Backend services
+Browser → Angular → Nginx → Gateway → Backend services
 
 Incorrect CORS configuration could block valid requests even when backend services were operational.
 
-Keycloak Redirect Configuration
+</details>
+
+<details>
+<summary><strong>🔐 Keycloak Redirect Configuration</strong></summary>
 
 Authentication flows required correct redirect URI and client configuration.
-
-A typical issue:
-
-invalid_redirect_uri
-
-required understanding the relationship between:
 
 Angular SPA
      │
@@ -829,15 +819,14 @@ Keycloak Client
      ▼
 Configured Redirect URI
 
-Container DNS & Networking
+A typical issue was invalid_redirect_uri.
 
-Dockerized services communicate through container networks and service names.
+</details>
 
-Errors such as:
+<details>
+<summary><strong>🐳 Container DNS & Networking</strong></summary>
 
-UnknownHost
-
-required validating:
+Errors such as UnknownHost required validating:
 
 Docker network membership;
 
@@ -849,9 +838,12 @@ container health;
 
 startup dependencies.
 
-Database Availability
+</details>
 
-Stateful services need to be ready before dependent applications can operate correctly.
+<details>
+<summary><strong>🗄️ Database Availability</strong></summary>
+
+Stateful services must be ready before dependent applications can operate correctly.
 
 This required:
 
@@ -863,11 +855,10 @@ startup dependency management;
 
 database diagnostics.
 
-Memory Pressure
+</details>
 
-Java microservices can approach their Docker memory limits even when the host still has available RAM.
-
-This required distinguishing:
+<details>
+<summary><strong>🧠 Memory Pressure</strong></summary>
 
 Host RAM
       vs
@@ -875,13 +866,12 @@ Container RAM Limit
       vs
 JVM Heap
 
-and treating memory allocation as an operational engineering concern.
+Java microservices can approach Docker memory limits even when the host still has available RAM.
 
-Persistent Storage
+</details>
 
-Legacy upload volumes and anonymous Docker volumes required a controlled migration strategy.
-
-The migration principle is:
+<details>
+<summary><strong>💾 Persistent Storage Migration</strong></summary>
 
 Identify
    ↓
@@ -901,102 +891,53 @@ Retain rollback
    ↓
 Remove legacy storage
 
-🧠 Key Engineering Decisions
+</details>
 
-Why Microservices?
+Key Engineering Decisions
 
-Microservices were chosen to isolate major business capabilities and allow services to evolve independently.
+Decision
 
-The approach also provides practical experience with:
+Rationale
 
-distributed communication;
+Microservices
 
-service discovery;
+Isolate major business capabilities and allow independent evolution
 
-centralized configuration;
+Keycloak
 
-container orchestration concepts;
+Rely on standard IAM protocols instead of implementing authentication manually
 
-independent deployment;
+Kafka
 
-operational observability.
+Use asynchronous communication where decoupling provides value
 
-Why Keycloak?
+Redis
 
-Authentication is security-sensitive and should not be reinvented without a strong reason.
+Use fast temporary/cache storage selectively
 
-Keycloak provides:
+MinIO
 
-standardized protocols;
+Keep object storage independent from disposable application containers
 
-centralized identity management;
+Docker
 
-OAuth2;
+Reproducible environments, isolation and operational consistency
 
-OpenID Connect;
+Engineering Principles
 
-token management;
+<div align="center">
 
-role-based authorization.
+Separation of Concerns · Disposable Application Containers · Persistent State Outside Runtime
 
-Why Kafka?
+Secure-by-Default Exposure · Automation Before Manual Deployment
 
-Kafka is used where asynchronous communication and decoupling provide architectural value.
+Observability by Design · Production Operations as Software Engineering
 
-It is not intended to replace synchronous APIs for every interaction.
+</div>
 
-Why Redis?
+Current Technical Evolution
 
-Redis is used selectively for ephemeral or cacheable data.
-
-The goal is not to introduce infrastructure unnecessarily, but to use it where fast temporary access provides measurable value.
-
-Why MinIO?
-
-Application containers should remain disposable.
-
-Files should therefore not depend on the lifecycle of a specific application container.
-
-MinIO provides dedicated object storage independent from microservice runtime containers.
-
-Why Docker?
-
-Docker provides reproducibility between environments and isolates service dependencies.
-
-It also establishes a foundation for future container orchestration.
-
-📐 Engineering Principles
-
-Several principles guide the project:
-
-Separation of Concerns
-        │
-        ├── Business services
-        ├── Identity
-        ├── Persistence
-        ├── Messaging
-        ├── Object storage
-        └── Observability
-
-Infrastructure as replaceable components
-
-Application containers as disposable workloads
-
-Persistent state separated from runtime
-
-Secure-by-default network exposure
-
-Automation before manual deployment
-
-Observability as part of architecture
-
-Production operations as part of software engineering
-
-📈 Current Technical Evolution
-
-QualeanPro continues to evolve beyond its initial production architecture.
-
-Areas under development or planned evolution include:
+The following items represent the evolution roadmap and should not be interpreted as all being currently available in production.
 
 improved learning progression tracking;
 
@@ -1030,13 +971,7 @@ disaster-recovery automation;
 
 Retrieval-Augmented Generation.
 
-These items represent the evolution roadmap and should not be interpreted as all being currently available in production.
-
-🤖 AI & RAG Exploration
-
-The platform also serves as an environment for exploring AI-assisted capabilities.
-
-A potential RAG architecture follows:
+AI & RAG Exploration
 
 Platform Knowledge
        │
@@ -1061,21 +996,20 @@ LLM
        ▼
 Context-Grounded Response
 
-Technologies being explored include:
+Technologies being explored:
 
-Spring AI;
 
-LangChain4j;
 
-Ollama;
 
-PostgreSQL with pgvector.
 
-🗺️ Architecture Evolution
 
-The current platform provides a foundation for a future evolution toward a more complete cloud-native architecture.
+Architecture Evolution
 
-CURRENT
+<table>
+<tr>
+<td width="50%" valign="top">
+
+Current
 
 Ubuntu Server
     │
@@ -1083,8 +1017,10 @@ Docker Compose
     │
 Microservices
 
+</td>
+<td width="50%" valign="top">
 
-TARGET EVOLUTION
+Target Evolution
 
 Infrastructure as Code
         │
@@ -1103,11 +1039,13 @@ Microservices
         ├── Centralized Observability
         └── Automated Recovery
 
-The objective is not to introduce Kubernetes simply for complexity, but to adopt orchestration when operational requirements justify it.
+</td>
+</tr>
+</table>
 
-🎓 What This Project Demonstrates
+Kubernetes is considered when operational requirements justify orchestration—not simply to add complexity.
 
-QualeanPro demonstrates practical experience across the complete software lifecycle:
+What This Project Demonstrates
 
 Requirements
     │
@@ -1141,13 +1079,9 @@ Production Operations
     ▼
 Continuous Improvement
 
-The project represents experience not only in building application features, but also in making software deployable, observable, maintainable and operable in production.
+QualeanPro demonstrates experience not only in building application features, but also in making software deployable, observable, maintainable and operable in production.
 
-📁 Case Study Repository
-
-This repository contains only public, non-sensitive engineering material.
-
-Planned structure:
+Case Study Repository
 
 qualeanpro-case-study/
 ├── README.md
@@ -1169,19 +1103,16 @@ qualeanpro-case-study/
 └── screenshots/
     └── anonymized-public-screenshots/
 
-🔒 Confidentiality
+Confidentiality
 
-QualeanPro is a private project.
-
-The production source code is intentionally not published in this repository.
+[!IMPORTANT]
+QualeanPro is a private project. The production source code is intentionally not published in this repository.
 
 This public case study does not expose:
 
 proprietary source code;
 
-credentials;
-
-API secrets;
+credentials or API secrets;
 
 private keys;
 
@@ -1199,7 +1130,7 @@ confidential operational configuration.
 
 Only architecture concepts and non-sensitive engineering information are presented.
 
-📌 Project Information
+Project Information
 
 Information
 
@@ -1277,17 +1208,27 @@ Status
 
 Active
 
-👨‍💻 Engineering Areas Demonstrated
+Engineering Areas Demonstrated
 
-Java Spring Boot Angular Microservices Distributed Systems
-REST APIs Kafka Redis PostgreSQL Keycloak OAuth2
-OpenID Connect PKCE MinIO Docker Docker Compose
-GitHub Actions Nginx Linux Prometheus Grafana
-CI/CD DevOps Cloud-Native Production Operations
+<div align="center">
 
-<p align="center">
-  <strong>
-    Building software is only the beginning.<br>
-    Reliable software must also be secured, deployed, monitored, maintained and continuously improved.
-  </strong>
-</p>
+
+
+
+
+
+
+
+Distributed Systems · REST APIs · Redis · Keycloak · OAuth2 · OpenID Connect · PKCE
+MinIO · Docker Compose · GitHub Actions · Nginx · Linux · Prometheus · Grafana
+CI/CD · DevOps · Cloud-Native · Production Operations
+
+</div>
+
+<div align="center">
+
+Building software is only the beginning.
+
+Reliable software must also be secured, deployed, monitored, maintained and continuously improved.
+
+</div>
