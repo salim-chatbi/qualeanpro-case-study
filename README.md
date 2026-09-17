@@ -255,102 +255,78 @@ Operational monitoring, backups and maintainability
 
 ---
 
-My Role
+## 👨‍💻 My Role
 
-I contributed to the design, development and production deployment of the platform across multiple technical areas.
+I contributed to the **design, development and production deployment** of QualeanPro across multiple technical areas.
 
 <table>
 <tr>
 <td valign="top" width="50%">
 
-Backend Engineering
+### ☕ Backend Engineering
 
-Java & Spring Boot microservices
-
-REST API design
-
-Service-to-service communication
-
-Configuration management
-
-Service discovery
-
-API gateway integration
-
-PostgreSQL persistence
-
-Kafka asynchronous processing
-
-Redis caching
+- Java & Spring Boot microservices
+- REST API design
+- Service-to-service communication
+- Configuration management
+- Service discovery
+- API gateway integration
+- PostgreSQL persistence
+- Kafka asynchronous processing
+- Redis caching
 
 </td>
 <td valign="top" width="50%">
 
-Frontend
+### 🌐 Frontend & Security
 
-Angular SPA integration
+**Frontend**
+- Angular SPA integration
+- Authentication flow integration
+- API communication through the gateway
+- Production frontend deployment
 
-Authentication flow integration
-
-API communication through the gateway
-
-Production frontend deployment
-
-Security
-
-Keycloak-based IAM
-
-OAuth2 / OpenID Connect
-
-PKCE
-
-Role-based access control
-
-Secured application access
+**Security**
+- Keycloak-based IAM
+- OAuth2 / OpenID Connect
+- PKCE
+- Role-based access control
+- Secured application access
 
 </td>
 </tr>
+
 <tr>
 <td valign="top">
 
-DevOps & Production
+### 🚀 DevOps & Production
 
-Docker & Docker Compose
-
-GitHub Actions CI/CD
-
-Nginx reverse proxy
-
-HTTPS / TLS
-
-Ubuntu production deployment
-
-Container resource management
-
-Persistent volume management
-
-Backup strategy
-
-Monitoring & troubleshooting
+- Docker & Docker Compose
+- GitHub Actions CI/CD
+- Nginx reverse proxy
+- HTTPS / TLS
+- Ubuntu production deployment
+- Container resource management
+- Persistent volume management
+- Backup strategy
+- Monitoring & troubleshooting
 
 </td>
 <td valign="top">
 
-Observability
+### 📊 Observability
 
-Prometheus
-
-Grafana
-
-Centralized logs
-
-Service health checks
-
-Production monitoring
+- Prometheus
+- Grafana
+- Centralized logs
+- Service health checks
+- Production monitoring
 
 </td>
 </tr>
 </table>
+
+---
 
 High-Level Architecture
 
