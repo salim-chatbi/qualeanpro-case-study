@@ -1,6 +1,6 @@
 <div align="center">
 
-# QualeanPro
+# Qualeanpro
 
 ### Cloud-Native E-Learning Platform
 
